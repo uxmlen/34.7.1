@@ -3,7 +3,7 @@
 
 template <typename T>
 concept ComplexConcept =
-    requires(const T &t) {
+    requires(T t) {
       { t.hash() } -> std::convertible_to<long>;
       { t.toString() } -> std::same_as<std::string>;
       !std::has_virtual_destructor<T>::value;
